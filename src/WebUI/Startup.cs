@@ -8,6 +8,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using NSwag;
 using NSwag.Generation.Processors.Security;
+using VueCliMiddleware;
 
 namespace CleanArchitecture.WebUI;
 
@@ -116,6 +117,7 @@ public class Startup
             if (env.IsDevelopment())
             {
                     //spa.UseAngularCliServer(npmScript: "start");
+                    spa.UseVueCli(npmScript: "serve");
                     spa.UseProxyToSpaDevelopmentServer(Configuration["SpaBaseUrl"] ?? "http://localhost:4200");
             }
         });
