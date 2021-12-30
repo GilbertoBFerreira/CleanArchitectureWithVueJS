@@ -9,7 +9,7 @@ services:
   clientapp:
     image: ${DOCKER_REGISTRY-}clientapp
     build:
-      context: src/WebUI/ClientApp
+      context: ./src/WebUI/
       dockerfile: Dockerfile
     depends_on:
       - webui
